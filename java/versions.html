@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java - versions</title>
+    <link href="../dellinger.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <h2>Java 8</h2>
+    <h3>La programmation fonctionnelle</h3>
+    <h4>Références de méthodes</h4>
+    <p>Les references de méthodes sont une simplification de la syntaxe d'invocation des fonctions lambda. il en existe 3 types:</p>
+    <ul>
+        <li>
+            Reference a une methode statique:
+            <code class="language-Java">(x, y) -> Math.pow(x, y)</code> => <code class="language-Java">Math::pow</code>
+        </li>
+        <li>
+            Reference a une methode d'instance:
+            <code class="language-Java">x -> monObject.maMethode(x)</code> => <code class="language-Java">monObject::maMethode</code>
+        </li>
+        <li>
+            Reference a un constructeur:
+            <code class="language-java">() -> new MaClasse();</code> => <code class="language-java">MaClasse::new</code>
+        </li>
+    </ul>
+    <h4>Passage de traitement en paramètre</h4>
+    <p>
+        Avant java 8, le passage de traitements en paramètres d'une methode, se faisait uniquement par le biais des classes anonymes.
+        Depuis Java 8, nous avons la possibilité de créer une reference sur un bloc de code. ce qui permet de le passer en paramètre des méthodes.
+    </p>
+    <h4>Expressions Lambda</h4>
+    <p>
+        il s'agit d'une forme de syntaxe permettant de simplifier l'implémentation d'une interface fonctionnelle.
+        Elle permet de s'affranchir des classes anonymes qui sont trop verbeuses.
+    </p>
+    <h4>Interfaces fonctionnelles</h4>
+    <p>
+        une interface fonctionnelle est une interface possédant une seule methode abstraite.
+        Elle peut contenir plusieurs méthodes par défaut. et peut être annoté par @FunctionalInterface
+    </p>
+    <h3>API Stream</h3>
+    <p>
+        il s'agit d'une api qui permet de manipuler une sequence de données d'une manière séquentielle ou parallèle avec une approche fonctionnelle.
+        l'interface phare de cette api est Stream, qui offre 2 types d'operations:
+        <ul>
+            <li>
+                Les opérations intermédiaires: transforment un Stream en autre Stream
+                <ul>
+                    <li>
+                        <label>filter</label>: filtre les elements qui vont satisfaire le prédicat passé en paramètre.
+                        <pre><code>Stream&lt;T&gt; <span class="hljs-title">filter</span>(Predicate&lt;? <span class="hljs-keyword">super</span> T&gt; predicate);</code></pre>
+                    </li>
+                    <li>
+                        <label>map</label>: transforme les elements selon la fonction passée en paramètre.
+                        <pre><code>&lt;R> Stream&lt;R&gt; <span class="hljs-title">map</span>(Function&lt;? <span class="hljs-keyword">super</span> T,? extends R&gt; mapper);</code></pre>
+                    </li>
+                    <li>
+                        <label>limit</label>: limite le traitement aux n premiers elements
+                        <pre><code>Stream&lt;T&gt; <span class="hljs-title">limit</span>(<span class="hljs-keyword">long</span> n);</code></pre>
+                    </li>
+                    <li>...</li>
+                </ul>
+            </li>
+            <li>
+                Les opérations finales: produisent un résultat ou un « side-effect »
+                <ul>
+                    <li>
+                        <label>forEach</label>: Exécute le Consumer sur chacun des éléments du Stream
+                        <pre><code>void <span class="hljs-title">forEach</span>(Consumer&lt;? <span class="hljs-keyword">super</span> T&gt; action)</code></pre>
+                    </li>
+                    <li>
+                        <label>reduce</label>: Réalise une opération de réduction qui accumule les différents éléments du Stream grâce à la fonction fournie
+                        <pre><code>Optional&lt;T&gt; <span class="hljs-title">reduce</span>(BinaryOperator&lt;T&gt; accumulator);</code></pre>
+                        <pre><code>T <span class="hljs-title">reduce</span>(T identity, BinaryOperator&lt;T&gt; accumulator);</code></pre>
+                        <pre><code>&lt;U&gt; U <span class="hljs-title">reduce</span>(U identity, BiFunction&lt;U,? super T,U&gt; accumulator, BinaryOperator&lt;U&gt; combiner);</code></pre>
+                    </li>
+                    <li>
+                        <label>collect</label>: Réalise une opération de réduction avec le Collector fourni en paramètre
+                        <pre><code>&lt;R,A&gt; R <span class="hljs-title">collect</span>(Collector&lt;? <span class="hljs-keyword">super</span> T,A,R&gt; collector)</code></pre>
+                    </li>
+                    <li>...</li>
+                </ul>
+            </ul>
+        </ul>
+    </p>
+    <h3>API Date/Time</h3>
+    <h3>La classe Optional</h3>
+    <p>
+        La classe Optional est une classe qui permet d’encapsuler un objet dont la valeur peut être null.
+        Son utilisation force le test de la valeur null, et prémunit ainsi des NullPointerException.
+    </p>
+    <h3>Méthodes par défaut</h3>
+
+    <h2>Java 9</h2>
+    <h3>System modulaire</h3>
+    <h3>Les mèthodes privées dans les interfaces</h3>
+    <h3>factory pour les collections</h3>
+    <h3>Api pour la gestion des processus et l'optention du PID grace a la classe ProcessHandle</h3>
+    <h3>JShell qui permet d'exécuter du code sans qu'il soit encapsulé dans une classe ou une methode.</h3>
+
+    <h2>Java 10</h2>
+    <h3>Inference de type avec le mot clé var</h3>
+    <h2>Java 11</h2>
+    <h3>Inference de type pour les lambda</h3>
+    <h3>Lancer des programmes à fichier unique sans compilation</h3>
+</body>
+</html>

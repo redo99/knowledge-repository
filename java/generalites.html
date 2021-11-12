@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java - Généralités</title>
+    <link href="../dellinger.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<h3 class="code-line" data-line-start=0 data-line-end=1 ><a id="Les_commandes_JDK_0"></a>Les commandes JDK</h3>
+<ul>
+    <li class="has-line-data" data-line-start="1" data-line-end="2">java: Interprète, permet de lancer un programme Java avec la <em>machine virtuelle</em>. <code>java Test.class</code></li>
+    <li class="has-line-data" data-line-start="2" data-line-end="3">javac: compilateur, permet de transformer le code java en bytecode. <code>javac Test.java</code></li>
+    <li class="has-line-data" data-line-start="3" data-line-end="4">javadoc: Permet de générer la documentation Java</li>
+    <li class="has-line-data" data-line-start="4" data-line-end="6">jar: Permet de créer des fichiers <code>jar jar -cf Test.jar com/metc/Test.class</code>.</li>
+</ul>
+<h3 class="code-line" data-line-start=6 data-line-end=7 ><a id="Les_classes_6"></a>Les classes</h3>
+<h4 class="code-line" data-line-start=8 data-line-end=9 ><a id="Les_classes_anonymes_8"></a>Les classes anonymes</h4>
+<ul>
+    <li class="has-line-data" data-line-start="9" data-line-end="11">Une classe anonyme est une classe définit au sein d’une methode. Elle n’a pas de nom et sa déclaration fusionne avec son instanciation. Elle implémente une interface ou hérite d’une classe.</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="12" data-line-end="32" class="language-Java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">InterfaceSample</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+    <span class="hljs-comment">/* Ceci est un passage de traitement en paramètre via une classe anonyme. */</span>
+    printYear(<span class="hljs-keyword">new</span> MySuperInterface() {
+      <span class="hljs-annotation">@Override</span>
+      <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getYear</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-number">1999</span>;
+      }
+    });
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">printYear</span><span class="hljs-params">(MySuperInterface myInterface)</span> </span>{
+    System.out.println(myInterface.getYear());
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">MySuperInterface</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">getYear</span><span class="hljs-params">()</span></span>;
+}
+</code></pre>
+<pre><code class="has-line-data" data-line-start="33" data-line-end="55" class="language-Java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ClassSample</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+    <span class="hljs-comment">/** Ceci est un passage de traitement en parametre via une classe anonyme. */</span>
+    printYear(<span class="hljs-keyword">new</span> MySuperClass() {
+      <span class="hljs-annotation">@Override</span>
+      <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getYear</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-number">1999</span>;
+      }
+    });
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">printYear</span><span class="hljs-params">(MySuperClass myClass)</span> </span>{
+    System.out.println(myClass.getYear());
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MySuperClass</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">getYear</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-keyword">return</span> <span class="hljs-number">2000</span>;
+  }
+}
+</code></pre>
+<h3 class="code-line" data-line-start=56 data-line-end=57 ><a id="Les_methodes_56"></a>Les methodes</h3>
+<ul>
+    <li class="has-line-data" data-line-start="58" data-line-end="61">Les arguments d’une methode sont des constantes.<br>
+        Nous ne pouvons pas changer leur valeur mais nous pouvons changer leurs attributs.</li>
+</ul>
+<h3 class="code-line" data-line-start=61 data-line-end=62 ><a id="Les_collections_61"></a>Les collections</h3>
+<ul>
+    <li class="has-line-data" data-line-start="63" data-line-end="64">Les tableaux (array) : La taille du tableau est définie a l’initialisation.</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="65" data-line-end="67" class="language-Java"><span class="hljs-keyword">int</span>[] intArray = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[<span class="hljs-number">3</span>];
+</code></pre>
+<p class="has-line-data" data-line-start="67" data-line-end="68">ou</p>
+<pre><code class="has-line-data" data-line-start="69" data-line-end="71" class="language-Java"><span class="hljs-keyword">int</span>[] intArray = {<span class="hljs-number">10</span>, <span class="hljs-number">8</span>, <span class="hljs-number">21</span>};
+</code></pre>
+<p class="has-line-data" data-line-start="71" data-line-end="72">Les tableaux multidimensionnels se declarent ainsi</p>
+<pre><code class="has-line-data" data-line-start="73" data-line-end="75" class="language-Java">String[][] myTheatreSeats=<span class="hljs-keyword">new</span> String[<span class="hljs-number">30</span>][<span class="hljs-number">12</span>];
+</code></pre>
+<ul>
+    <li class="has-line-data" data-line-start="75" data-line-end="77">
+        <p class="has-line-data" data-line-start="75" data-line-end="76">Les Listes (List) : collection d’objets <strong><em>ordonnés</em></strong></p>
+    </li>
+    <li class="has-line-data" data-line-start="77" data-line-end="80">
+        <p class="has-line-data" data-line-start="77" data-line-end="79">Les Ensembles (Set) : collection d’objets <strong><em>uniques</em></strong> et <strong><em>non ordonnés</em></strong><br>
+            <code>/!\ Lors de l'ajout d'un objet deja existant dans un Set, aucune exception n'est levée mais l'ajout ne s'effectue pas.</code></p>
+    </li>
+    <li class="has-line-data" data-line-start="80" data-line-end="83">
+        <p class="has-line-data" data-line-start="80" data-line-end="82">Les dictionnaires (Map) : Collection de paires clé/valeur. La classe HashMap n’insert pas forcément dans l’ordre,<br>
+            pour preserver l’ordre il faut utiliser la classe LinkedHashMap.</p>
+    </li>
+</ul>
+<h3 class="code-line" data-line-start=83 data-line-end=84 ><a id="Les_boucles_83"></a>Les boucles</h3>
+<ul>
+    <li class="has-line-data" data-line-start="85" data-line-end="86">Les boucles d’enumeration (for):</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="87" data-line-end="91" class="language-java"><span class="hljs-keyword">for</span>(i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++){
+  Sytem.out.println(<span class="hljs-string">"I'm so happy"</span>);
+}
+</code></pre>
+<pre><code class="has-line-data" data-line-start="92" data-line-end="97" class="language-java">String[] array = {<span class="hljs-string">"String1"</span>, <span class="hljs-string">"String2"</span>, <span class="hljs-string">"String3"</span>};
+<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; array.length; i++){
+    System.out.println(array[i]);
+}
+</code></pre>
+<pre><code class="has-line-data" data-line-start="98" data-line-end="103" class="language-java">String[] array = {<span class="hljs-string">"String1"</span>, <span class="hljs-string">"String2"</span>, <span class="hljs-string">"String3"</span>};
+<span class="hljs-keyword">for</span>(String text : array){
+    System.out.println(text);
+}
+</code></pre>
+<ul>
+    <li class="has-line-data" data-line-start="104" data-line-end="105">les boucles conditionnelles (while):</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="106" data-line-end="113" class="language-java">String[] array = {<span class="hljs-string">"String1"</span>, <span class="hljs-string">"String2"</span>, <span class="hljs-string">"String3"</span>};
+<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">while</span>(i &lt; array.length) {
+    System.out.println(array[i]);
+    i++;
+}
+</code></pre>
+<pre><code class="has-line-data" data-line-start="114" data-line-end="121" class="language-Java">String[] array = {<span class="hljs-string">"String1"</span>, <span class="hljs-string">"String2"</span>, <span class="hljs-string">"String3"</span>};
+<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;
+do {
+  System.out.println(array[i]);
+  i++;
+} <span class="hljs-keyword">while</span>(i &lt; array.length);
+</code></pre>
+</body>
+</html>

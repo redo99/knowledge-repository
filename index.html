@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Référentiel de connaissances</title>
+    <link href="dellinger.css" rel="stylesheet" />
+</head>
+<body>
+    <h1>Référentiel de connaissances</h1>
+    <h2>I- Programmation générale</h2>
+    <h3>Processus de développement d'une HU</h3>
+    <ul>
+        <li>Initier ou MAJ des specifications techniques</li>
+        <li>Initier, voire écrire les TUs</li>
+        <li>Veiller à ce que le code soit bien linté et respecte la syntaxe du langage, pour une meilleur lisibilité</li>
+        <li>Documenter les différents block de code (sans oublier la javadoc)</li>
+        <li>Logger les différentes actions développées et les éventuelles exception, pour faciliter la resolution des problemes</li>
+        <li>Respecter le git flow lors de la creation de la branche en spécifiant s'il s'agit d'une feature, d'un bugfix, d'un hotfix ou bien d'une release</li>
+        <li>Squasher tous les commits intermédiaires, pour ne pas polluer le log git</li>
+        <li>Veiller a ce que le message du commit décrive le plus fidélement possible </li>
+    </ul>
+    <h3>les design pattern</h3>
+    <ul>
+        <li>Singleton: </li>
+        <li>Factory: </li>
+        <li>Observer: Permet de notifier une collection d'observateur quand l'objet Observable change d'etat</li>
+        <li>Decorator: </li>
+        <li></li>
+        <li></li>
+    </ul>
+    <h3>L'inférence de type</h3>
+    <p>
+        C'est le mécanisme qui permet a un compilateur ou un intérpréteur de recherche le type (le plus général possible)
+        que puisse prendre une expression.
+    </p>
+
+    <h3>POO</h3>
+    <h4>L'Encapsulation</h4>
+    <p>
+        Un principe permettant de garantir l'intégrité des données d'un objet en empêchant l'acces direct a ces données
+        et à l'implémentation de l'objet.
+        La modification des données passe alors par l'utilisation de méthodes appropriées (interfaces).
+    </p>
+    <h4>L'héritage</h4>
+    <p>Specialisation d'une classe à partir d'une classe mère plus générique.</p>
+    <h5>Interdiction de l'héritage</h5>
+    <ul>
+        <li>Une classe final interdit l'héritage de la dite classe.</li>
+        <li>Une methode final ne peut pas être redéfinit dans une classe dérivée.</li>
+    </ul>
+    <h4>Le polymorphisme</h4>
+    <ul>
+        <li>Ad-hoc (surcharge) : Surcharge d'une methode avec des signatures différentes pour effectuer des traitements différents. </li>
+        <li>Paramétrique : Surcharge d'une methode avec la meme signature mais des paramètres différents, pour réaliser le meme traitement. </li>
+        <li>D'héritage : Redéfinir une methode de la classe mère pour effectuer un traitement different.</li>
+    </ul>
+    <h4>L'abstraction</h4>
+    <h5>Méthodes abstraites</h5>
+    <p>Méthodes qui permettent de forcer les classes filles a définir (implementer) un comportement (methode) particulier.</p>
+    <p>Les methodes abstraites, sont définis dans des classes abstraites</p>
+    <h5>Classes abstraites</h5>
+    <p>
+        Une classe abstraite est une classe dont l'implémentation n'est pas encore complete et qui n'est pas instantiable.
+        Elle sert de base a d'autres classes dérivées.
+    </p>
+    <p>Elle a pour but de s'assurer que les classes filles respecteront le contrat définit pas la classe meme.</p>
+    <p>Elle définit des attributs, des méthodes pures, et des méthodes abstraites.</p>
+    <h4>Interfaces</h4>
+    <p>
+        Une interface est un contrat que les classes l'implémentant s'engage a respecter.
+        Elle définit les constantes, et les signatures des méthodes à implementer.
+    </p>
+    <h4>Objets immuables</h4>
+    <p>
+        Un <strong>Objet immuable</strong> est un objet dont l'état ne peux être changé.
+        L'exemple typique est celui de la classe String en Java, qui propose des objets immuables.
+        pour avoir un objet de type chaine de caractères <strong>mutable</strong>, il faut utiliser StringBuffer.
+    </p>
+    <h4>Contrôle d'accès</h4>
+    <ul>
+        <li>public : visible pour tous et par conséquent le moins restrictif</li>
+        <li>protected (protégé) : visible pour le package et l'ensemble de ses sous-classes</li>
+        <li>(par defaut): visible uniquement par le package dans lequel il se trouve</li>
+        <li>private (privé) : accessible uniquement dans le contexte dans lequel les variables sont définies (à l'intérieur de la classe dans laquelle il est situé)</li>
+
+    </ul>
+
+    <h2>II- Java</h2>
+    <ul>
+        <li><a href="java/generalites.html">Généralités</a></li>
+        <li><a href="java/versions.html">Les apports des versions</a></li>
+    </ul>
+
+    <h2>Persistance</h2>
+    <h3>NoSQL</h3>
+    <p>Les bases NoSQL sont</p>
+    <ul>
+        <li>Non relationnel</li>
+        <li>Distribuée</li>
+        <li>Scalable horizontalement</li>
+        <li>open-source</li>
+    </ul>
+    <p>Quelques caractéristiques</p>
+    <ul>
+        <li>schema-free</li>
+        <li>easy replication support</li>
+        <li>Simple API</li>
+        <li>eventually consistent / BASE (not ACID)</li>
+    </ul>
+
+    <h2>III- Gestion de projet</h2>
+    <h3>Cycle en V vs. méthodes Agile</h3>
+    <ul>
+        <li>
+            Le cycle en V est une methode de gestion de projets, basée sur 9 phases successives,
+            alors que le Scrum met en avant la realisation d'un produit d'une manière itérative incrémentale.
+        </li>
+        <li>
+            La livraison en cycle V, s'effectue une fois toutes les fonctionnalités développées (ce qui peut creer un effet tunnel)
+            or en scrum les besoins sont priorisés développés et livrés plus fréquemment. c'est le principe de livrer petit et souvent.
+        </li>
+        <li>
+            En cycle en V, l'étude initiale du besoin est figée toute evolution de ce besoin est considérée comme un avenant,
+            alors que les méthodes agile font preuve d'une souplesse quant a l'évolution des besoins en cours de realisation du produit.
+        </li>
+    </ul>
+
+    <h2>IV- Personnel</h2>
+    <h3>Presentation</h3>
+    <p>Bonjour, Je m'appelle Reda,</p>
+    <p>J'ai un peu plus de 15 ans d'expérience dans le domaine du développement d'applications</p>
+    <p>
+        Durant ces 15 années j'ai effectué un certain nombre de missions aussi bien pour le compte de structures familiales,
+        qu'au sein de gros comptes.
+        J'ai pu découvrir alors un certain nombre de metiers, tel que le contrôle de gestion, l'affacturage, l'assurance Vie ou le paiement électronique et le recrutement.
+    </p>
+    <p>
+        Durant mon parcours, j'ai occupé des postes comme développeur, analyste concepteur, tech lead, chef de projet, et depuis 2017,
+        je me suis focalisé sur le développement fullstack, me rendant compte que c'est l'aspect qui me plait le plus dans ce metier.
+    </p>
+    <div>
+        Ma dernière mission s'est déroulé au sein du projet SWAP à la MAIF.
+        Un projet qui consistait a remplacer un conteur d'applications, a destination des gestionnaires.
+        Le produit présentait 2 contraintes techniques:
+        <ul>
+            <li>Client lourd écrit en eclipse RCP, et on sait combien c'est couteux de maintenir des clients lours sur un tel parc</li>
+            <li>Le conteneur faisait le pont de communication entre les differente appplication ce qui creer une forte depedence</li>
+        </ul>
+        la solution que nous avions proposé, consistaient en un ensemble d'outils qui permettait aux applications de ganer en autonomie et en interoparibilité.
+        Accompagné d'une topbar qui comprenait touts les composants visuels.
+        Avec en background une api Rest, a moitié basée sur une base MangoDB, et qui interrogeait d'autre api interne.
+    </div>
+    <div>
+        ma participation consistait principalement en
+    <ul>
+        <li>Le Recueil du besoin aupres du PO de l'ux et meme aupres des BA</li>
+        <li>La redaction des specifications techniques</li>
+        <li>Conception de données</li>
+        <li>Realisation des tests unitaires et d'intégration</li>
+        <li>Realisation et développement des différents modules et fonctionnalités</li>
+        <li>Revue de code</li>
+        <li>Participation aux différentes ceremonies de gestion du projet de l'agile tel que les sprint planning, les daily, les retrospectives.</li>
+        <li>Passation des connaissances des equipes internes</li>
+    </ul>
+    </div>
+    <p>
+        En ce qui concerne l'aspect technique, je developpe aujourd'hui au wxwwtour des technologies Java, aussi bien dans sa version 7 que la version 8.
+        et je m'intéresse depuis peu a la version 11. </p>
+    <p>
+        Quand je parle de Java, je parle aussi des framework comme spring boot avec ses differents modules Data, Rest, Security, et openapi.
+        En test, je suis familier avec Junit et Mockito et les differents assert.
+    </p>
+    <p>Je parle aussi des gestionnaire des package maven ou gradle. j'ai pu travailler avec les 2.</p>
+    <div>Je suis tres familier avec les forges de développement et les techniques:
+        <ul>
+            <li>d'intégration continue, pour automatiser les tests apres chque push, avec ds outils comme jenkins ou travis, pour autamatiser les tests, les builds ou meme les livraisons sur des repository comme nexus.</li>
+            <li>l'amélioration continue, pour verifier la qualité du code avec des outil comme jacoco ou sonar</li>
+            <li>et puis la livraison continue, pour automatiser builds, preparer des packages et les deposer dans des depot tel que Nexus</li>
+            <li>Je suis tres familier avec des repository de gestion de code source comme gitlab ou meme github entreprise.</li>
+            <li>Je suis tres a l'aise avec git pour effectuer des operations de commit de push de squash de merge de resolution de conflits.</li>
+            <li>connais bien gitflow pour gérer des branches de features, du bugfix ou de hotfix.</li>
+            <li>Depuis que j'ai découvert l'agilité en 2016, j'ai développé une certaine preference pour ces methodes et plus precisement pour le scrum
+            pour des raison d'efficacité, en vue des differentes succes story que j'ai pu lire et aussi pour le coté ludique que presente les differentes ceremonies.</li>
+        </ul>
+    </div>
+    <p>
+        pour conclure, je dirais que en vue des différentes experience que j'ai la chance de vivre,
+        je suis aujourd'hui en mesure d'accompagner des projets tel que le votre.
+        Et je serais tres ravi de mettre mes humbles competences au service du projet totem.
+    </p>
+    <p>
+        Voila tout, auriez vous des questions ?
+    </p>
+
+
+    <h3>Qualités</h3>
+    <ul>
+        <li>facilité d'adaptation</li>
+        <li>Montée rapide en competence sur les sujets techniques</li>
+        <li>Agréable a travailler en équipe</li>
+    </ul>
+    <h3>Défauts</h3>
+    <ul>
+        <li>Manque de confiance en soit qui peut se traduire parfois par une remise en question injustifiée</li>
+        <li>Manque de repartie</li>
+        <li>Je suis de nature anxieuse</li>
+        <li>Pas de specialisation metier</li>
+        <li>Aucune certification: J'estime que l'acquisition de la connaissance</li>
+    </ul>
+
+
+    <h1>Questions</h1>
+    <ul>
+        <li>Checked exceptions ???</li>
+        <li>Interfaces fonctionnelles ???</li>
+        <li>Classes mutables ???</li>
+        <li>TUs java avec JUnit et Mockito ?</li>
+        <li>Seales classes ?</li>
+        <li>Programation fonctionnelle ???</li>
+        <li>La destruction d'objet (comment faire en java. comment faire en JS)</li>
+        <li>Pattern:
+            <ul>
+                <li>Decorator</li>
+                <li>Singleton</li>
+                <li>Factory</li>
+                <li>MVC</li>
+                <li>...</li>
+            </ul>
+        </li>
+        <li>Compiletime</li>
+        <li>Mechanisme du grabage collector</li>
+        <li>Mechanismes de resiliance (capacité a supporter le choc):
+            <ul>
+                <li>Circuit breaker</li>
+                <li>actuator / micrometer</li>
+            </ul>
+        </li>
+        <li>Observabilité:
+            <ul>
+                <li>alerting</li>
+                <li>Dynatrace</li>
+                <li>kibana</li>
+                <li>Graphana</li>
+            </ul>
+        </li>
+        <li>Certificats SSL (https)</li>
+        <li>Programmation reactive</li>
+        <li>Bug bounty ????</li>
+        <li>Payload ?????</li>
+        <li>Exceptions vérifiées</li>
+        <li>Breaking changes</li>
+        <li>Boiler plate</li>
+        <li>Cache & Revocation</li>
+        <li>SPOF</li>
+        <li>Curl</li>
+        <li>OpenApi et swagger</li>
+    </ul>
+
+    <h2>Web</h2>
+    <ul>
+        <li>Verbes HTTP
+        <li>Lister les erreurs HTTP
+        <li>HTTP vs HTTP2
+        <li>csrf
+        <li>CORS
+        <li>HTML 5
+    </ul>
+
+    <h2>Testing</h2>
+    <ul>
+        <li>TUs</li>
+        <li>TIs</li>
+        <li>TNRs</li>
+        <li>Tests d'acceptation</li>
+    </ul>
+
+
+    <h2>Git</h2>
+    <h3>Gitflow</h3>
+    <h3>Comment faire un hotfix, bugfix ...</h3>
+
+
+
+    <h2>Java</h2>
+    <ul>
+        <li>Pool de thread ???</li>
+        <li>LTS de Java ???</li>
+        <li>Dque ???</li>
+        <li>ForkJoinPool ???</li>
+        <li>Spring Security</li>
+        <li>Profiling ???</li>
+        <li>Either ???</li>
+        <li>Spring Data</li>
+    </ul>
+
+    <h2>Spring Boot</h2>
+    <ul>
+        <li>SpringBootServletInitializer ???</li>
+        <li>@SpringBootApplication ???</li>
+        <li>WebSecurityConfigurerAdapter ???</li>
+    </ul>
+
+    <h3>Rest</h3>
+
+    <h2>JS</h2>
+
+    <h3>bundling</h3>
+    <h3>webpack</h3>
+
+    <h3>React</h3>
+    <h4>Redux</h4>
+    <ul>
+        <li>Quand l'utiliser</li>
+        <li>Vs passege de props et useContext</li>
+    </ul>
+
+    <h3>Jest</h3>
+    <h3>Enzyme</h3>
+
+
+    <h2>Persistance</h2>
+    <h3>SQL</h3>
+    <h4>Postgresql</h4>
+    <ul>
+        <li>Recherche fulltext ???</li>
+        <li>* exem, to_tsquery, to_tsvector ???</li>
+    </ul>
+
+    <h3>NoSQL</h3>
+    <h4>MongoDB</h4>
+    <h4>GraphQL</h4>
+
+
+    <h2>Agilité</h2>
+</body>
+</html>
