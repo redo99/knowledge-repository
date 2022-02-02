@@ -14,16 +14,26 @@
         <li>Initier, voire écrire les TUs</li>
         <li>Veiller à ce que le code soit bien linté et respecte la syntaxe du langage, pour une meilleur lisibilité</li>
         <li>Documenter les différents block de code (sans oublier la javadoc)</li>
-        <li>Logger les différentes actions développées et les éventuelles exception, pour faciliter la resolution des problemes</li>
+        <li>Logger les différentes actions développées et les éventuelles exceptions, pour faciliter la detection des anomalies</li>
         <li>Respecter le git flow lors de la creation de la branche en spécifiant s'il s'agit d'une feature, d'un bugfix, d'un hotfix ou bien d'une release</li>
         <li>Squasher tous les commits intermédiaires, pour ne pas polluer le log git</li>
         <li>Veiller a ce que le message du commit décrive le plus fidélement possible </li>
     </ul>
     <h3>les design pattern</h3>
+    <h4>De création</h4>
     <ul>
-        <li>Singleton: </li>
-        <li>Factory: </li>
-        <li>Observer: Permet de notifier une collection d'observateur quand l'objet Observable change d'etat</li>
+        <li><label>Singleton</label>: garantit que l’instance d’une classe n’existe qu’en un seul exemplaire, tout en fournissant un point d’accès global à cette instance.</li>
+        <li><label>Factory</label>: définit une interface pour créer des objets dans une classe mère, mais délègue le choix des types d’objets à créer aux sous-classes.</li>
+        <li><label>Abstract Factory</label>: permet de créer des familles d’objets apparentés sans préciser leur classe concrète.</li>
+        <li><label>Builder</label>: permet de construire des objets complexes étape par étape. Il permet de produire différentes variations ou représentations d’un objet en utilisant le même code de construction.</li>
+        <li><label>Prototype</label>: crée de nouveaux objets à partir d’objets existants sans rendre le code dépendant de leur classe.</li>
+    </ul>
+    <h4>Structurels</h4>
+    <h4>Comportementaux</h4>
+    <ul>
+        <li>Création</li>
+        <li></li>
+                <li>Observer: Permet de notifier une collection d'observateur quand l'objet Observable change d'etat</li>
         <li>Decorator: </li>
         <li></li>
         <li></li>
@@ -209,6 +219,13 @@
     </ul>
 
 
+    <h1>References</h1>
+    <ul>
+        <li><a href="https://refactoring.guru/fr/">Refactoring Guru</a></li>
+        <li><a href="https://www.jmdoudoux.fr/accueil_java.htm">Développons en Java</a></li>
+    </ul>
+
+
     <h1>Questions</h1>
     <ul>
         <li>Checked exceptions ???</li>
@@ -278,7 +295,8 @@
     <h2>Git</h2>
     <h3>Gitflow</h3>
     <h3>Comment faire un hotfix, bugfix ...</h3>
-
+    <h3>Conventional commits</h3>
+    <p>Il faudra développer cette section à partir du site <a href="https://www.conventionalcommits.org/fr/v1.0.0/">www.conventionalcommits.org</a></p>
 
 
     <h2>Java</h2>
